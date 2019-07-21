@@ -1,0 +1,116 @@
+#*****************************************************************************
+# BASIC 3D PRIMITIVES
+#*****************************************************************************
+snippet cube "cube([x,y,z],center=true)"
+cube([${1:x},${2:y},${3:z}], ${4:center});
+endsnippet
+
+snippet cylinder "cylinder(height,r1,r2,center)"
+cylinder(h = ${1:height}, r1 = ${2:BottomRadius}, r2 = ${3:TopRadius}, ${4:center});
+endsnippet
+
+
+#*****************************************************************************
+# BOOLEAN OPERATIONS
+#*****************************************************************************
+snippet union "union() { ... }"
+union() {
+	${0:${VISUAL:# objects...}}
+}
+endsnippet
+
+snippet difference "difference() { ... }"
+difference() {
+	${0:${VISUAL:# objects...}}
+}
+endsnippet
+
+snippet intersection "intersection() { ... }"
+intersection() {
+	${0:${VISUAL:# objects...}}
+}
+endsnippet
+
+
+#*****************************************************************************
+# TRANSFORMATIONS
+#*****************************************************************************
+snippet mirror "mirror(v= [x, y, z] ) { ... }"
+mirror([${1:x}, ${2:y}, ${3:z}])
+endsnippet
+
+snippet translate "translate(v = [x,y,z])"
+translate([${1:x},${2:y},${3:z}]) $0
+endsnippet
+
+snippet translate "translate(v = [x,y,z]) { ... }"
+translate([${1:x},${2:y},${3:z}]) {
+	${0:${VISUAL:# objects...}}
+}
+endsnippet
+
+
+snippet rotate "rotate([x,y,z])"
+rotate([${1:x},${2:y},${3:z}]) $0
+endsnippet
+
+snippet rotate "rotate([x,y,z]) { ... }"
+rotate([${1:x},${2:y},${3:z}]) {
+	${0:${VISUAL:# objects...}}
+}
+endsnippet
+
+# rotate([x,y,z])
+# scale([x,y,z])
+# resize([x,y,z],auto)
+# mirror([x,y,z])
+# multmatrix(m)
+# color("colorname",alpha)
+# color([r,g,b,a])
+# offset(r|delta,chamfer)
+# hull()
+# minkowski()
+
+#*****************************************************************************
+# D.R.Y.
+#*****************************************************************************
+snippet module "module name ( parameters ) { actions }"
+module ${1:name} (${2:parameters}) {
+	$0
+}
+endsnippet
+
+snippet function "function name ( parameters ) = value ;"
+function ${1:name} (${2:parameters}) =
+	$0
+endsnippet
+
+snippet include "include <${library_name}.scad>"
+include "<${1:library_name}.scad>"
+endsnippet
+
+snippet use "use <${library_name}.scad>"
+use "<${1:library_name}.scad>"
+endsnippet
+
+#*****************************************************************************
+# OTHER
+#*****************************************************************************
+
+snippet import "import(file, convexity=N);"
+import("${1:file}",convexity=${2:10});
+endsnippet
+
+
+snippet for "for (i = [start:step:end]) { ... }"
+for (i = [${1:start}:${2:step}:${3:end}]) {
+	$0
+}
+endsnippet
+
+snippet for "for (i = [start:end]) { ... }"
+for (i = [${1:start}:${2:end}]) {
+	$0
+}
+endsnippet
+

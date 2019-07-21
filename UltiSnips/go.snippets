@@ -1,0 +1,15 @@
+snippet scs "scs := spew.ConfigState { ... } scs.Dump(_)"
+scs := spew.ConfigState{
+	Indent:   "${0:    }",
+	MaxDepth: ${2:3},
+}
+scs.Dump(${1:})
+endsnippet
+
+snippet spew "scs := spew.ConfigState { ... } scs.Dump(_)"
+scs := spew.ConfigState{
+	Indent:   "${0:    }",
+	MaxDepth: ${2:3},
+}
+scs.Dump(${1:})
+endsnippet

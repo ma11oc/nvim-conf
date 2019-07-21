@@ -1,0 +1,5 @@
+snippet witho "with open(file, mode) as ..." b
+with open(${1:file}, '${2:mode}') as ${3:name}:
+	f = ${4:block}
+	f.${5:operation}(${6:content})
+endsnippet
