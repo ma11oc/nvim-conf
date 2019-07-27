@@ -1,7 +1,7 @@
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
-autocmd FileType javascript,typescript,js,ts call SetupLSForJS()
+" autocmd FileType javascript,typescript,js,ts call SetupLSForJS()
 autocmd FileType css,sass,less,scss call SetupLSForCSS()
 autocmd FileType go call SetupLSForGo()
 

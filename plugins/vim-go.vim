@@ -16,4 +16,8 @@ augroup go
   autocmd BufNewFile,BufRead *.go
     \ setlocal noexpandtab tabstop=4 shiftwidth=4
 
+  autocmd Filetype go setlocal foldmethod=syntax
+
 augroup END
+
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment', 'comment']

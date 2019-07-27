@@ -4,25 +4,21 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
 
   Plug 'jiangmiao/auto-pairs', { 'tag': '*' }
 
-  Plug 'pearofducks/ansible-vim', { 'tag': '*' }
+  Plug 'pearofducks/ansible-vim', { 'tag': '*', 'for':  ['yaml.ansible'] }
 
   Plug 'skywind3000/asyncrun.vim'
 
-  Plug 'alfredodeza/coveragepy.vim'
-
   Plug 'ctrlpvim/ctrlp.vim', { 'tag': '*' }
 
-  Plug 'lilydjwg/colorizer', { 'tag': '*' }
-
+  " colortheme darcula
   Plug 'blueshirts/darcula', { 'tag': '*' }
+
 
   " Plug 'Shougo/deoplete.nvim', { 'tag': '*', 'do': ':UpdateRemotePlugins' }
   " Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
-
-  " dependency for deoplete-go
   " Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '$NVIM_RUNTIME_PATH/plugged/gocode/nvim/symlink.sh' }
 
-  Plug 'mattn/emmet-vim'
+  Plug 'mattn/emmet-vim', { 'for': ['html', 'markdown', 'md'] }
 
   " https://github.com/junegunn/gv.vim
   " A git commit browser.
@@ -30,6 +26,8 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
 
   " Plug 'Shougo/neocomplete.vim', { 'tag': '*' }
 
+  " https://github.com/Yggdroot/indentLine
+  " A vim plugin to display the indention levels with thin vertical lines
   Plug 'Yggdroot/indentLine', { 'tag': '*' }
 
   Plug 'autozimu/LanguageClient-neovim', {
@@ -37,31 +35,63 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
       \ 'do': 'bash install.sh',
       \ }
 
-  Plug 'jszakmeister/markdown2ctags', { 'tag': '*' }
+  Plug 'jszakmeister/markdown2ctags', { 'tag': '*', 'for': ['markdown', 'md'] }
 
+
+  " YCM completer
+  " Plug 'Valloric/YouCompleteMe'
+
+
+  " NCM2 completer
   Plug 'ncm2/ncm2'
   Plug 'roxma/nvim-yarp'
-  Plug 'ncm2/ncm2-github'
-  Plug 'ncm2/ncm2-cssomni'
-  Plug 'ncm2/ncm2-tmux'
-  Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
+
+  Plug 'ncm2/ncm2-highprio-pop'
   Plug 'filipekiss/ncm2-look.vim'
+  Plug 'ncm2/ncm2-github'
+
+  " css, sass, less
+  Plug 'ncm2/ncm2-cssomni', { 'for': ['css', 'scss', 'sass', 'less'] }
+
+  " tmux panes
+  Plug 'ncm2/ncm2-tmux'
+
+  " javascript
+  Plug 'ncm2/ncm2-tern',  {'do': 'npm install', 'for': ['javascript']}
 
   " typescript
-  Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+  Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript'] }
+  Plug 'mhartington/nvim-typescript', { 'do': './install.sh', 'for': ['typescript'] }
+  Plug 'burnettk/vim-angular', { 'for': ['typescript'] }
 
-  Plug 'ncm2/ncm2-vim'
-  Plug 'ncm2/ncm2-go'
+
+  " vim
+  Plug 'ncm2/ncm2-vim', { 'for': ['vim'] } | Plug 'Shougo/neco-vim', { 'for': ['vim'] }
+
+  " go
+  Plug 'ncm2/ncm2-go', { 'for': ['go'] }
+  Plug 'fatih/vim-go', { 'tag': '*' , 'do': ':GoInstallBinaries', 'for': ['go'] }
+
+  " python
+  Plug 'ncm2/ncm2-jedi', { 'for': ['python'] }
+  Plug 'davidhalter/jedi-vim', { 'for': ['python'], 'tag': '*' }
+  Plug 'tweekmonster/impsort.vim', { 'for': ['python'] }
+  Plug 'alfredodeza/coveragepy.vim', { 'for': ['python'] }
+  Plug 'heavenshell/vim-pydocstring', { 'for': ['python'], 'tag': '*' }
+
+
+  " ultisnips
   Plug 'ncm2/ncm2-ultisnips'
-  Plug 'ncm2/ncm2-jedi'
+  Plug 'SirVer/ultisnips', { 'tag': '3.1' }
+
+  " java
+  Plug 'ObserverOfTime/ncm2-jc2', {'for': ['java', 'jsp']}
+  Plug 'artur-shaik/vim-javacomplete2', {'for': ['java', 'jsp']}
 
 
   Plug 'scrooloose/nerdcommenter', { 'tag': '*' }
 
   Plug 'scrooloose/nerdtree'
-
-  Plug 'klen/python-mode', { 'tag': '*' }
 
   Plug 'saltstack/salt-vim'
 
@@ -71,15 +101,13 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
 
   Plug 'majutsushi/tagbar', { 'tag': '*' }
 
-  Plug 'SirVer/ultisnips', { 'tag': '*' }
-
   Plug 'bling/vim-airline', { 'tag': '*' }
 
   " https://github.com/vim-airline/vim-airline-themes
   " A collection of themes for vim-airline
   Plug 'vim-airline/vim-airline-themes'
 
-  Plug 'stevearc/vim-arduino'
+  Plug 'stevearc/vim-arduino', { 'for': ['ino'] }
 
   Plug 'MattesGroeger/vim-bookmarks', { 'tag': '*' }
 
@@ -95,27 +123,27 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
 
   Plug 'xolox/vim-easytags', { 'tag': '*' }
 
+  " https://github.com/tpope/vim-fugitive
   Plug 'tpope/vim-fugitive', { 'tag': '*' }
-
-  Plug 'fatih/vim-go', { 'tag': '*' , 'do': ':GoInstallBinaries' }
 
   " https://github.com/airblade/vim-gitgutter
   " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
   Plug 'airblade/vim-gitgutter'
 
-  Plug 'elzr/vim-json'
+  Plug 'elzr/vim-json', { 'for': ['json'] }
 
-  Plug 'plasticboy/vim-markdown', { 'tag': '*' }
+  " https://github.com/plasticboy/vim-markdown
+  Plug 'plasticboy/vim-markdown', { 'for': ['md', 'markdown'] }
 
   Plug 'xolox/vim-misc', { 'tag': '*' }
 
-  Plug 'matze/vim-move', { 'tag': '*' }
+  " Plug 'matze/vim-move', { 'tag': '*' }
 
-  Plug 'terryma/vim-multiple-cursors', { 'tag': '*' }
+  Plug 'mg979/vim-visual-multi'
 
   Plug 'kalafut/vim-taskjuggler'
 
-  Plug 'rodjek/vim-puppet'
+  Plug 'rodjek/vim-puppet', { 'for': ['puppet'] }
 
   Plug 'tpope/vim-sensible', { 'tag': '*' }
 
@@ -123,9 +151,9 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
 
   Plug 'tpope/vim-surround', { 'tag': '*' }
 
-  Plug 'hashivim/vim-terraform'
+  Plug 'hashivim/vim-terraform', { 'for': ['terraform'] }
 
-  Plug 'pedrohdz/vim-yaml-folds', { 'tag': '*' }
+  Plug 'pedrohdz/vim-yaml-folds', { 'tag': '*', 'for': ['yaml'] }
 
   Plug 'eshion/vim-sync'
 
@@ -152,14 +180,14 @@ source $NVIM_CONFIG_PATH/plugins/ctrlp.vim
 " source $NVIM_CONFIG_PATH/plugins/deoplete.vim
 " source $NVIM_CONFIG_PATH/plugins/deoplete-go.vim
 source $NVIM_CONFIG_PATH/plugins/easytags.vim
-source $NVIM_CONFIG_PATH/plugins/gocode.vim
-" source $NVIM_CONFIG_PATH/plugins/neocomplete.vim
+" source $NVIM_CONFIG_PATH/plugins/gocode.vim
+source $NVIM_CONFIG_PATH/plugins/jedi-vim.vim
 source $NVIM_CONFIG_PATH/plugins/LanguageClient-neovim.vim
 source $NVIM_CONFIG_PATH/plugins/ncm2.vim
 source $NVIM_CONFIG_PATH/plugins/nerdcommenter.vim
 source $NVIM_CONFIG_PATH/plugins/nerdtree.vim
+" source $NVIM_CONFIG_PATH/plugins/YouCompleteMe.vim
 source $NVIM_CONFIG_PATH/plugins/nvim-typescript.vim
-source $NVIM_CONFIG_PATH/plugins/python-mode.vim
 source $NVIM_CONFIG_PATH/plugins/supertab.vim
 source $NVIM_CONFIG_PATH/plugins/tagbar.vim
 source $NVIM_CONFIG_PATH/plugins/vim-airline.vim
@@ -170,8 +198,6 @@ source $NVIM_CONFIG_PATH/plugins/vim-fugitive.vim
 source $NVIM_CONFIG_PATH/plugins/vim-go.vim
 source $NVIM_CONFIG_PATH/plugins/vim-markdown.vim
 source $NVIM_CONFIG_PATH/plugins/vim-move.vim
-source $NVIM_CONFIG_PATH/plugins/vim-multiple-cursors.vim
 source $NVIM_CONFIG_PATH/plugins/vim-taskjuggler.vim
-source $NVIM_CONFIG_PATH/plugins/vim-templates.vim
 source $NVIM_CONFIG_PATH/plugins/vim-terraform.vim
 source $NVIM_CONFIG_PATH/plugins/vimux.vim

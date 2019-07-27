@@ -12,4 +12,9 @@ highlight CtrlPMatch ctermfg=208 ctermbg=236
 highlight StatusLine cterm=None ctermfg=245
 highlight WildMenu ctermfg=208 ctermbg=None
 highlight VertSplit term=reverse ctermfg=242 ctermbg=236 guifg=#555555 guibg=#323232
-highlight! link pythonDocstring pythonComment
+
+
+highlight DiffAdd    cterm=none ctermfg=002 ctermbg=236
+highlight DiffChange cterm=none ctermfg=003 ctermbg=236
+highlight DiffText   cterm=none ctermfg=003 ctermbg=236
+highlight DiffDelete cterm=none ctermfg=009 ctermbg=236

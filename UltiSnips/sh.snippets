@@ -1,0 +1,16 @@
+snippet sync "shell script to sync files for vim-sync"
+#!/usr/bin/env bash
+
+set -eux
+
+RHOST=${1:remote_host}
+RPATH=${0:remote_dst}
+
+if [ "upload" == \$1 ];then
+  rsync -rvzt -i --rsync-path="sudo mkdir -p $RPATH/\$2/ && sudo rsync" \$(dirname \$0)/\$2/\$3 \$RHOST:\$RPATH/\$2/\$3
+elif [ 'download' == \$1 ];then
+  rsync -rvzt -i --rsync-path='sudo rsync' \$RHOST:\$RPATH/\$2/\$3 \$(dirname \$0)/\$2/\$3
+fi
+
+exit 0
+endsnippet

@@ -6,5 +6,5 @@ autocmd BufWinLeave * call clearmatches()
 
 augroup sources
   autocmd!
-  autocmd FileType c,cpp,go,gradle,java,py,html setl tabstop=4 shiftwidth=4
+  autocmd FileType c,cpp,go,gradle,java,python,html setl tabstop=4 shiftwidth=4
 augroup END

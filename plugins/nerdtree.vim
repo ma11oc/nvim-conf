@@ -8,3 +8,5 @@ highlight NERDTreeUp ctermfg=243
 highlight NERDTreeDirSlash ctermfg=250
 highlight NERDTreeClosable ctermfg=250
 highlight NERDTreeOpenable ctermfg=250
+
+nnoremap <leader>nt :NERDTreeToggle<CR>

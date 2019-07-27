@@ -10,6 +10,7 @@ set clipboard=unnamed,unnamedplus
 set noswapfile
 set encoding=utf-8
 set expandtab
+set exrc  " will try to load (.nvimrc|_nvimrc|.exrc) from cwd
 set modeline
 set modelines=5
 set number

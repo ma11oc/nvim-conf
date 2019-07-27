@@ -7,7 +7,7 @@ let g:vim_markdown_override_foldtext = 0
 "
 let g:tagbar_type_markdown = {
     \ 'ctagstype': 'markdown',
-    \ 'ctagsbin' : "$NVIM_RUNTIME_PATH/plugged/markdown2ctags/markdown2ctags.py",
+    \ 'ctagsbin' : expand("$NVIM_RUNTIME_PATH/plugged/markdown2ctags/markdown2ctags.py"),
     \ 'ctagsargs' : '-f - --sort=yes',
     \ 'kinds' : [
         \ 's:sections',
