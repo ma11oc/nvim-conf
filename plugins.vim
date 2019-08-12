@@ -2,6 +2,12 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
 
   Plug 'w0rp/ale', { 'tag': '*' }
 
+  " code formatting
+  Plug 'prettier/vim-prettier', {
+      \ 'tag': '*',
+      \ 'do': 'yarn install',
+      \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
   Plug 'jiangmiao/auto-pairs', { 'tag': '*' }
 
   Plug 'pearofducks/ansible-vim', { 'tag': '*', 'for':  ['yaml.ansible'] }
@@ -14,17 +20,11 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
   Plug 'blueshirts/darcula', { 'tag': '*' }
 
 
-  " Plug 'Shougo/deoplete.nvim', { 'tag': '*', 'do': ':UpdateRemotePlugins' }
-  " Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
-  " Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '$NVIM_RUNTIME_PATH/plugged/gocode/nvim/symlink.sh' }
-
   Plug 'mattn/emmet-vim', { 'for': ['html', 'markdown', 'md'] }
 
   " https://github.com/junegunn/gv.vim
   " A git commit browser.
   Plug 'junegunn/gv.vim'
-
-  " Plug 'Shougo/neocomplete.vim', { 'tag': '*' }
 
   " https://github.com/Yggdroot/indentLine
   " A vim plugin to display the indention levels with thin vertical lines
@@ -36,10 +36,6 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
       \ }
 
   Plug 'jszakmeister/markdown2ctags', { 'tag': '*', 'for': ['markdown', 'md'] }
-
-
-  " YCM completer
-  " Plug 'Valloric/YouCompleteMe'
 
 
   " NCM2 completer
@@ -62,7 +58,6 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
   " typescript
   Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript'] }
   Plug 'mhartington/nvim-typescript', { 'do': './install.sh', 'for': ['typescript'] }
-  Plug 'burnettk/vim-angular', { 'for': ['typescript'] }
 
 
   " vim
@@ -176,17 +171,15 @@ source $NVIM_CONFIG_PATH/autoload/airline/themes/pragmatic.vim
 
 source $NVIM_CONFIG_PATH/plugins/ale.vim
 source $NVIM_CONFIG_PATH/plugins/ansible-vim.vim
+source $NVIM_CONFIG_PATH/plugins/auto-pairs.vim
 source $NVIM_CONFIG_PATH/plugins/ctrlp.vim
-" source $NVIM_CONFIG_PATH/plugins/deoplete.vim
-" source $NVIM_CONFIG_PATH/plugins/deoplete-go.vim
 source $NVIM_CONFIG_PATH/plugins/easytags.vim
-" source $NVIM_CONFIG_PATH/plugins/gocode.vim
+source $NVIM_CONFIG_PATH/plugins/impsort.vim
 source $NVIM_CONFIG_PATH/plugins/jedi-vim.vim
 source $NVIM_CONFIG_PATH/plugins/LanguageClient-neovim.vim
 source $NVIM_CONFIG_PATH/plugins/ncm2.vim
 source $NVIM_CONFIG_PATH/plugins/nerdcommenter.vim
 source $NVIM_CONFIG_PATH/plugins/nerdtree.vim
-" source $NVIM_CONFIG_PATH/plugins/YouCompleteMe.vim
 source $NVIM_CONFIG_PATH/plugins/nvim-typescript.vim
 source $NVIM_CONFIG_PATH/plugins/supertab.vim
 source $NVIM_CONFIG_PATH/plugins/tagbar.vim
@@ -195,9 +188,11 @@ source $NVIM_CONFIG_PATH/plugins/vim-arduino.vim
 source $NVIM_CONFIG_PATH/plugins/vim-bookmarks.vim
 source $NVIM_CONFIG_PATH/plugins/vim-easyalign.vim
 source $NVIM_CONFIG_PATH/plugins/vim-fugitive.vim
+source $NVIM_CONFIG_PATH/plugins/vim-gitgutter.vim
 source $NVIM_CONFIG_PATH/plugins/vim-go.vim
 source $NVIM_CONFIG_PATH/plugins/vim-markdown.vim
 source $NVIM_CONFIG_PATH/plugins/vim-move.vim
+source $NVIM_CONFIG_PATH/plugins/vim-pydocstring.vim
 source $NVIM_CONFIG_PATH/plugins/vim-taskjuggler.vim
 source $NVIM_CONFIG_PATH/plugins/vim-terraform.vim
 source $NVIM_CONFIG_PATH/plugins/vimux.vim

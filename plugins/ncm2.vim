@@ -8,7 +8,7 @@ set completeopt=noinsert,menuone,noselect
 set shortmess+=c
 
 " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
-inoremap <c-c> <ESC>
+" inoremap <c-c> <ESC>
 
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
