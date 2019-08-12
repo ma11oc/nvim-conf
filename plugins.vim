@@ -154,6 +154,8 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
 
   Plug 'benmills/vimux', { 'tag': '*' }
 
+  Plug 'AndrewRadev/splitjoin.vim', { 'tag': '*' }
+
 call plug#end()
 
 function CheckDependency(name, fix)
