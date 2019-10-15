@@ -15,6 +15,7 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
   Plug 'skywind3000/asyncrun.vim'
 
   Plug 'ctrlpvim/ctrlp.vim', { 'tag': '*' }
+  Plug 'junegunn/fzf.vim'
 
   " colortheme darcula
   Plug 'blueshirts/darcula', { 'tag': '*' }
@@ -45,6 +46,8 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
   Plug 'ncm2/ncm2-highprio-pop'
   Plug 'filipekiss/ncm2-look.vim'
   Plug 'ncm2/ncm2-github'
+  Plug 'ncm2/ncm2-path'
+  Plug 'fgrsnau/ncm2-aspell'
 
   " css, sass, less
   Plug 'ncm2/ncm2-cssomni', { 'for': ['css', 'scss', 'sass', 'less'] }
@@ -58,6 +61,7 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
   " typescript
   Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript'] }
   Plug 'mhartington/nvim-typescript', { 'do': './install.sh', 'for': ['typescript'] }
+  Plug 'leafgarland/typescript-vim', { 'tag': '*', 'for': ['typescript'] }
 
 
   " vim
