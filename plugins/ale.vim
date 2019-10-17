@@ -13,6 +13,6 @@ let g:ale_fix_on_save = 1
 
 call CheckDependency('bandit', 'pip3 install bandit (or use your package manager)')
 let g:ale_linters = {
-      \ 'python': ['flake8', 'pylint', 'bandit'],
+      \ 'python': ['flake8', 'pylint', 'bandit', 'mypy'],
       \ 'typescript': ['tslint', 'tsserver']
       \ }

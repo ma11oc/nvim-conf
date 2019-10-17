@@ -74,7 +74,6 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
   " python
   Plug 'ncm2/ncm2-jedi', { 'for': ['python'] }
   Plug 'davidhalter/jedi-vim', { 'for': ['python'], 'tag': '*' }
-  Plug 'tweekmonster/impsort.vim', { 'for': ['python'] }
   Plug 'alfredodeza/coveragepy.vim', { 'for': ['python'] }
   Plug 'heavenshell/vim-pydocstring', { 'for': ['python'], 'tag': '*' }
 
@@ -180,7 +179,6 @@ source $NVIM_CONFIG_PATH/plugins/ansible-vim.vim
 source $NVIM_CONFIG_PATH/plugins/auto-pairs.vim
 source $NVIM_CONFIG_PATH/plugins/ctrlp.vim
 source $NVIM_CONFIG_PATH/plugins/easytags.vim
-source $NVIM_CONFIG_PATH/plugins/impsort.vim
 source $NVIM_CONFIG_PATH/plugins/jedi-vim.vim
 source $NVIM_CONFIG_PATH/plugins/LanguageClient-neovim.vim
 source $NVIM_CONFIG_PATH/plugins/ncm2.vim
