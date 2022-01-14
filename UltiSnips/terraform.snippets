@@ -1,0 +1,15 @@
+snippet random "resource 'random_password' '_name_' {}"
+resource "random_password" "${1:password}" {
+	length           = ${2:16}
+	special          = ${3:true}
+	override_special = "${4:_%@}"
+}
+endsnippet
+
+snippet random "resource 'random_string' '_name_' {}"
+resource "random_string" "${1:password}" {
+	length           = ${2:16}
+	special          = ${3:true}
+	override_special = "${4:_%@}"
+}
+endsnippet
