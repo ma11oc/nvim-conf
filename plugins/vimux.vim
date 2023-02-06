@@ -1,5 +1,6 @@
 let g:VimuxHeight = 50
 let g:VimuxPromptString = "> "
+let g:VimuxExpandCommand = 1
 " Run the current file with rspec
 map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
 " Prompt for a command to run

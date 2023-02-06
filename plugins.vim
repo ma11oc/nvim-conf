@@ -1,6 +1,6 @@
 call plug#begin("$NVIM_RUNTIME_PATH/plugged")
 
-  Plug 'w0rp/ale', { 'tag': '*' }
+  Plug 'dense-analysis/ale', { 'tag': '*' }
 
   " code formatting
   " Plug 'prettier/vim-prettier', {
@@ -38,6 +38,11 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
 
   Plug 'jszakmeister/markdown2ctags', { 'tag': '*', 'for': ['markdown', 'md'] }
 
+  Plug 'google/vim-jsonnet'
+
+  " add this line to your .vimrc file
+  Plug 'cappyzawa/starlark.vim'
+  Plug 'vmware-tanzu/ytt.vim', { 'tag': '*', 'for': ['yaml'] }
 
   " ncm2 completer
   " Plug 'ncm2/ncm2'
@@ -66,15 +71,6 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
 
   " Language Server
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  " Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'yaegassy/coc-ansible', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'josa42/coc-go', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' } " pip install -U jedi-language-server
-  " Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
-  " Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'neoclide/coc-emmet', {'do': 'yarn install --frozen-lockfile'}
 
   " vim
   " Plug 'ncm2/ncm2-vim', { 'for': ['vim'] } | Plug 'Shougo/neco-vim', { 'for': ['vim'] }
@@ -171,7 +167,7 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
 
   Plug 'eshion/vim-sync'
 
-  Plug 'benmills/vimux', { 'tag': '*' }
+  Plug 'benmills/vimux', { 'tag': 'master' }
 
   Plug 'AndrewRadev/splitjoin.vim', { 'tag': '*' }
 
@@ -180,6 +176,7 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
   " Plug 'vimwiki/vimwiki'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 
   " Plug 'michal-h21/vim-zettel'
   " Plug 'rking/ag.vim'
@@ -188,6 +185,8 @@ call plug#begin("$NVIM_RUNTIME_PATH/plugged")
   " Font required:
   "   https://github.com/ryanoasis/nerd-fonts#font-installation
   Plug 'ryanoasis/vim-devicons', { 'tag': '*' }
+
+  Plug 'AckslD/nvim-neoclip.lua', { 'tag': '*' }
 
 call plug#end()
 
@@ -212,10 +211,13 @@ source $NVIM_CONFIG_PATH/plugins/coc-ansible.vim
 " source $NVIM_CONFIG_PATH/plugins/ctrlp.vim
 source $NVIM_CONFIG_PATH/plugins/dash.vim
 source $NVIM_CONFIG_PATH/plugins/easytags.vim
-source $NVIM_CONFIG_PATH/plugins/fzf-preview.vim
+source $NVIM_CONFIG_PATH/plugins/fzf.vim
+source $NVIM_CONFIG_PATH/plugins/fzf-lua.vim
+" source $NVIM_CONFIG_PATH/plugins/fzf-preview.vim
 " source $NVIM_CONFIG_PATH/plugins/jedi-vim.vim
 " source $NVIM_CONFIG_PATH/plugins/LanguageClient-neovim.vim
 " source $NVIM_CONFIG_PATH/plugins/ncm2.vim
+source $NVIM_CONFIG_PATH/plugins/nvim-neoclup.lua.vim
 source $NVIM_CONFIG_PATH/plugins/nerdcommenter.vim
 source $NVIM_CONFIG_PATH/plugins/nerdtree.vim
 " source $NVIM_CONFIG_PATH/plugins/nvim-typescript.vim
@@ -226,6 +228,7 @@ source $NVIM_CONFIG_PATH/plugins/vim-airline.vim
 source $NVIM_CONFIG_PATH/plugins/vim-arduino.vim
 source $NVIM_CONFIG_PATH/plugins/vim-bookmarks.vim
 source $NVIM_CONFIG_PATH/plugins/vim-easyalign.vim
+source $NVIM_CONFIG_PATH/plugins/vim-easyclip.vim
 " source $NVIM_CONFIG_PATH/plugins/vim-fugitive.vim
 source $NVIM_CONFIG_PATH/plugins/vim-gitgutter.vim
 source $NVIM_CONFIG_PATH/plugins/vim-go.vim

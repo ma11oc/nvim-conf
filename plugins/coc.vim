@@ -3,14 +3,13 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-emmet',
   \ 'coc-go',
+  \ 'coc-git',
   \ 'coc-json',
   \ 'coc-git',
-  \ 'coc-prettier',
   \ 'coc-pydocstring',
   \ 'coc-pyright',
   \ 'coc-sh',
   \ 'coc-snippets',
-  \ 'coc-tabnine',
   \ 'coc-tasks',
   \ 'coc-tsserver',
   \ 'coc-yaml',
@@ -187,3 +186,5 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+highlight CocCodeLens ctermfg=238 guifg=#999999
